@@ -5,6 +5,6 @@ def rectangle(l, b):
 
 
 def circle(r):
-    area = round(.14 * r * r,2)
+    area = round(3.14 * r * r,2)
     perimeter = round(2 * 3.14 * r,2)
     return print(f"area : ", area, "\nperimeter : ", perimeter)
