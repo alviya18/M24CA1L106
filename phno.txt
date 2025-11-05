@@ -1,0 +1,8 @@
+Name       Address         Phone Number
+---------------------------------------
+Alfiya     Thrissur        6789012345
+Sneha      Kasaragod       9876543219
+Joseph     Ernakulam       987650
+Vishnu     Pathanamthitta  5798654321
+Rahul      Trivandrum      8123456789
+Meera      Kottayam        5123456789
