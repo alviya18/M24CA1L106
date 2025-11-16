@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>heyLaLa Music</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='assets/images/favicon.png') }}">
+
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+  </head>
+
+  <body>
+    <main class="container">
+      <header class="hero">
+        <img
+          class="logo"
+          src="{{ url_for('static', filename='assets/images/favicon.png') }}",height="80" width="80"
+          alt="heyLaLa Music Logo">
+        <h1>Sparkles yeahhhh✨</h1>
+        <p class="subtitle">Set the vibe with your favourite song!</p>
+      </header>
+      <section class="grid">
+  {% for s in sounds %}
+  <article class="card" data-sound-id="{{ s.id }}" data-sound-url="{{ s.url }}">
+    <div class="card-content">
+      <div>
+        <img class="cover" src="{{ s.img }}" alt="{{ s.title }}" />
+      </div>
+
+      <h3 class="label">{{ s.title }}</h3>
+      <p class="album" style="font-size: 14px; color: var(--muted); margin-top: -6px;">
+        {{ s.album }}
+      </p>
+
+      <div class="controls">
+  <img src="{{ url_for('static', filename='assets/images/play.png') }}" 
+       class="play-btn btn-icon" alt="Play" />
+  <img src="{{ url_for('static', filename='assets/images/stop.png') }}" 
+       class="stop-btn btn-icon" alt="Stop" />
+</div>
+
+
+    </div>
+  </article>
+  {% endfor %}
+</section>
+
+<div class="player-bar" id="playerBar" hidden>
+    <audio id="globalAudio" controls loop></audio>
+</div>
+<div style="height: 120px;"></div>
+    </main>
+
+    <!-- JS -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>
